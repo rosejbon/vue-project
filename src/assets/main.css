@@ -72,12 +72,30 @@ body {
   line-height: 1.5;
   color: var(--color-black);
   background: var(--color-white);
+  margin: unset;
   font-family:
     Rubik,
     Helvetica Neue,
     Helvetica,
     Arial,
     sans-serif;
+}
+
+/* Set core font size defaluts */
+h1 {
+  font-size: var(--text-4)
+}
+
+h2 {
+  font-size: var(--text-2)
+}
+
+h3, h4 {
+  font-size: var(--text-1);
+}
+
+p {
+  font-size: var(--text-0);
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -134,18 +152,6 @@ label {
   cursor: pointer;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font: inherit;
-}
-
-fieldset {
-  border: 0;
-}
 
 p + p {
   margin-top: 1em;
