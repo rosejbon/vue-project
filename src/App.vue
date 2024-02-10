@@ -1,17 +1,42 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import IconSearch from './components/icons/IconSearch.vue'
 </script>
 
 <template>
   <header>
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+    <div class="banner">
+      <ul>
+        <li><RouterLink to="/">Search <IconSearch/></RouterLink></li>
+        <li><RouterLink to="/">Learn</RouterLink></li>
+        <li><RouterLink to="/">Donate</RouterLink></li>
+      </ul>
+    </div>
+    <div class="header">
+      <RouterLink to="/" title="Back to homepage">
+        <img class="logo" src="./assets/logo.png" />
+      </RouterLink>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <ul>
+          <li>
+            <RouterLink to="/">Home</RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/about">What we do</RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/digital-divide">The digital divide</RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/about">Get involved</RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/about">Our network</RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/about">Insights</RouterLink>
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -20,65 +45,69 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-s) var(--space-xl);
+  gap: var(--space-s);
+}
+
+.header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-xs);
+}
+
+.header nav a {
+  text-decoration: none;
 }
 
 .logo {
-  display: block;
-  margin: 0 auto 2rem;
+  height: 40px;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.banner {
+  padding: 0 var(--space-xl);
+  border-bottom: 0.1rem solid var(--color-black);
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.banner ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.banner ul li{
+  padding: var(--space-xs) var(--space-s);
+  border-right: 0.1rem solid var(--color-black);
+  border-left:  0.1rem solid var(--color-black);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.banner ul li:first-child{
+  margin-right: auto
 }
 
-nav a:first-of-type {
-  border: 0;
+.banner ul li:nth-child(2){
+  background: linear-gradient(to top, var(--color-green) 10%, var(--color-white) 10% 100%);
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.banner ul li:nth-child(3){
+  border: unset;
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+a {
+  text-decoration: none;
 }
 </style>
