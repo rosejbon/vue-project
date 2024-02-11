@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 import Link from './Link.vue';
 import Stack from './Stack.vue';
+
+import person from '../assets/person-on-their-phone.jpeg?url'
 </script>
 
 <template>
     <div class="hero">
-        <img src="../assets/person-on-their-phone.jpeg" alt="Person on their phone" />
+        <img :src="person" alt="Person on their phone" />
         <Stack gap="space-m" :style="`align-items : flex-start`">
             <h1>Get online week 2021</h1>
             <p>

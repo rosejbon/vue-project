@@ -1,51 +1,52 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
 import IconSearch from './components/icons/IconSearch.vue'
-import type { VariableDeclaration } from 'typescript';
+import logo from './assets/logo.png?url'
 </script>
 
 <template>
   <header>
     <div class="banner">
       <ul>
-        <li><RouterLink to="/">Search <IconSearch/></RouterLink></li>
-        <li><RouterLink to="/">Learn</RouterLink></li>
-        <li><RouterLink to="/" :style="`color: var(--color-white)`">Donate</RouterLink></li>
+        <li><a href="/">Search <IconSearch/></a></li>
+        <li><a href="/">Learn</a></li>
+        <li><a href="/">Donate</a></li>
       </ul>
     </div>
     <div class="header">
-      <RouterLink to="/" title="Back to homepage">
-        <img class="logo" src="./assets/logo.png" alt="Good things foundation logo" />
-      </RouterLink>
+      <a href="/" title="Back to homepage">
+        <img class="logo" :src="logo" />
+      </a>
       <nav>
         <ul>
           <li>
-            <RouterLink to="/">Home</RouterLink>
+            <a href="/">Home</a>
           </li>
           <li>
-            <RouterLink to="/about">What we do</RouterLink>
+            <a href="/about">What we do</a>
           </li>
           <li>
-            <RouterLink to="/digital-divide">The digital divide</RouterLink>
+            <a href="/digital-divide">The digital divide</a>
           </li>
           <li>
-            <RouterLink to="/about">Get involved</RouterLink>
+            <a href="/about">Get involved</a>
           </li>
           <li>
-            <RouterLink to="/about">Our network</RouterLink>
+            <a href="/about">Our network</a>
           </li>
           <li>
-            <RouterLink to="/about">Insights</RouterLink>
+            <a href="/about">Insights</a>
           </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <RouterView />
+  <slot></slot>
 </template>
 
-<style scoped>
+<style >
+@import './assets/main.css';
+
 .header {
   display: flex;
   flex-wrap: wrap;

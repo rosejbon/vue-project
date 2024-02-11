@@ -4,10 +4,10 @@
             <h2>How can we help you?</h2>
             <p>Let us know who you are and what you're looking for, and we'll help you get to the right place.</p>
             <Box padding="space-m" background="white">
-                <form class="form" @submit.prevent="handleSubmit">
+                <form class="form" action="/about" method="POST">
                     <label>
                         I am
-                        <select v-model="whoYouAre">
+                        <select name="whoYouAre">
                             <option value="individual">an individual</option>
                             <option value="charity">a charity</option>
                             <option value="volunteer">a volunteer</option>
@@ -16,7 +16,7 @@
                     </label>
                     <label>
                         And I
-                        <select v-model="whatYouWant">
+                        <select name="whatYouWant">
                             <option value="learn">want to learn</option>
                             <option value="share">want to share</option>
                             <option value="create">want to create</option>
@@ -30,26 +30,9 @@
 </template>
 
 <script lang="ts" setup>
-import { useFormStore } from '@/stores/form';
-import { ref } from 'vue'
-import { useRouter } from 'vue-router';
-
 import Box from './Box.vue';
 import Button from './Button.vue';
 import Stack from './Stack.vue';
-
-const formStore = useFormStore();
-const router = useRouter();
-
-const whoYouAre = ref<string | null>(formStore.whoYouAre);
-const whatYouWant = ref<string | null>(formStore.whatYouWant);
-
-const handleSubmit = () => {
-    formStore.setWhoYouAre(whoYouAre.value || "");
-    formStore.setWhatYouWant(whatYouWant.value || "");
-    router.push('/about');
-};
-
 </script>
   
 <style scoped>

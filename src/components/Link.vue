@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
 import { defineProps } from 'vue'
 
 interface Props {
@@ -12,9 +11,9 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-    <RouterLink :to="props.page" class="link">
+    <a :href="props.page" class="link">
         <slot>{{ props.text }}</slot>
-    </RouterLink>
+    </a>
 </template>
   
 <style scoped>

@@ -6,13 +6,15 @@ import Hero from './Hero.vue'
 import Form from './Form.vue'
 import Link from './Link.vue'
 import Stack from './Stack.vue'
+
+import smilingPerson from '../assets/person-smiling.jpeg?url'
 </script>
 
 <template>
   <div>
     <Hero />
     <Grid>
-      <img src="../assets/person-smiling.jpeg" alt="Person smiling at a desk"
+      <img :src="smilingPerson" alt="Person smiling at a desk"
         :style="`height: 100%; width: 100%; object-fit: cover`">
       <Box padding="space-xl" background="green">
         <Stack gap="space-m" :style="`align-items : flex-start`">
