@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import IconSearch from './components/icons/IconSearch.vue'
+import type { VariableDeclaration } from 'typescript';
 </script>
 
 <template>
@@ -9,12 +10,12 @@ import IconSearch from './components/icons/IconSearch.vue'
       <ul>
         <li><RouterLink to="/">Search <IconSearch/></RouterLink></li>
         <li><RouterLink to="/">Learn</RouterLink></li>
-        <li><RouterLink to="/">Donate</RouterLink></li>
+        <li><RouterLink to="/" :style="`color: var(--color-white)`">Donate</RouterLink></li>
       </ul>
     </div>
     <div class="header">
       <RouterLink to="/" title="Back to homepage">
-        <img class="logo" src="./assets/logo.png" />
+        <img class="logo" src="./assets/logo.png" alt="Good things foundation logo" />
       </RouterLink>
       <nav>
         <ul>
