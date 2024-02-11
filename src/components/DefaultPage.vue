@@ -23,8 +23,25 @@
             Faucibus interdum posuere lorem ipsum dolor sit amet consectetur adipiscing.
         </p>
     </Box>
+    <Box v-if="selectedOptions" padding="space-xl" background="green">
+        <Stack spacing="space-m">
+            <h2>Form results:</h2>
+            <p>You are: {{ selectedOptions.whoYouAre }}</p>
+            <p>You want to: {{ selectedOptions.whatYouWant }}</p>
+        </Stack>
+    </Box>
 </template>
 
 <script lang="ts" setup>
+import { useFormStore } from '@/stores/form';
+
 import Box from './Box.vue'
+import Stack from './Stack.vue';
+
+const formStore = useFormStore();
+
+const selectedOptions = {
+  whoYouAre: formStore.whoYouAre,
+  whatYouWant: formStore.whatYouWant,
+};
 </script>

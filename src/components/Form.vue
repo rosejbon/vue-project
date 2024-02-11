@@ -32,12 +32,14 @@
 <script lang="ts" setup>
 import { useFormStore } from '@/stores/form';
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
 
 import Box from './Box.vue';
 import Button from './Button.vue';
 import Stack from './Stack.vue';
 
 const formStore = useFormStore();
+const router = useRouter();
 
 const whoYouAre = ref<string | null>(formStore.whoYouAre);
 const whatYouWant = ref<string | null>(formStore.whatYouWant);
@@ -45,6 +47,7 @@ const whatYouWant = ref<string | null>(formStore.whatYouWant);
 const handleSubmit = () => {
     formStore.setWhoYouAre(whoYouAre.value || "");
     formStore.setWhatYouWant(whatYouWant.value || "");
+    router.push('/about');
 };
 
 </script>
