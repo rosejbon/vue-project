@@ -14,8 +14,7 @@ import smilingPerson from '../assets/person-smiling.jpeg?url'
   <div>
     <Hero />
     <Grid>
-      <img :src="smilingPerson" alt="Person smiling at a desk"
-        :style="`height: 100%; width: 100%; object-fit: cover`">
+      <img :src="smilingPerson" alt="Person smiling at a desk" :style="`height: 100%; width: 100%; object-fit: cover`">
       <Box padding="space-xl" background="green">
         <Stack gap="space-m" :style="`align-items : flex-start`">
           <h2>We are a social change charity, helping people to improve their lives through digital.</h2>
