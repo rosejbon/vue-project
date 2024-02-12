@@ -57,6 +57,7 @@ const handleSubmit = () => {
     display: inline-flex;
     gap: var(--space-s);
     align-items: center;
+    flex-wrap: wrap;
 }
 </style>
   
