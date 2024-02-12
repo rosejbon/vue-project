@@ -4,17 +4,28 @@ import logo from './assets/logo.png?url'
 </script>
 
 <template>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+  </head>
   <header>
     <div class="banner">
       <ul>
-        <li><a href="/">Search <IconSearch/></a></li>
+        <li><a href="/">Search
+            <IconSearch />
+          </a></li>
         <li><a href="/">Learn</a></li>
         <li><a href="/">Donate</a></li>
       </ul>
     </div>
     <div class="header">
       <a href="/" title="Back to homepage">
-        <img class="logo" :src="logo" />
+        <img class="logo" :src="logo" alt="Good things foundation logo" />
       </a>
       <nav>
         <ul>
@@ -42,6 +53,8 @@ import logo from './assets/logo.png?url'
   </header>
 
   <slot></slot>
+
+  </html>
 </template>
 
 <style >
@@ -85,25 +98,25 @@ import logo from './assets/logo.png?url'
   padding: 0;
 }
 
-.banner ul li{
+.banner ul li {
   padding: var(--space-xs) var(--space-s);
   border-right: 0.1rem solid var(--color-black);
-  border-left:  0.1rem solid var(--color-black);
+  border-left: 0.1rem solid var(--color-black);
   font-weight: 700;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
 }
 
-.banner ul li:first-child{
+.banner ul li:first-child {
   margin-right: auto
 }
 
-.banner ul li:nth-child(2){
+.banner ul li:nth-child(2) {
   background: linear-gradient(to top, var(--color-green) 10%, var(--color-white) 10% 100%);
 }
 
-.banner ul li:nth-child(3){
+.banner ul li:nth-child(3) {
   border: unset;
   background-color: var(--color-red);
   color: var(--color-white);
@@ -111,5 +124,4 @@ import logo from './assets/logo.png?url'
 
 a {
   text-decoration: none;
-}
-</style>
+}</style>
