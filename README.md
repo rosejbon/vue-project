@@ -1,6 +1,6 @@
-# vue-project
+# vue-with-astro-project
 
-Link to preview site hosted on Cloudflare - https://vue-project-bnt.pages.dev/
+Link to preview this branch which is hosted on Cloudflare - https://part-2.vue-project-bnt.pages.dev/
 
 
 ## Project Setup
